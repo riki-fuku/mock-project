@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmailSendHistorieTable extends Migration
+class CreateEmailSendHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateEmailSendHistorieTable extends Migration
      */
     public function up()
     {
-        Schema::create('email_send_historie', function (Blueprint $table) {
+        Schema::create('email_send_histories', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('send_user_id')->comment('送信ユーザーID');
             $table->unsignedBigInteger('send_shop_id')->comment('送信店舗ID');
@@ -32,6 +32,6 @@ class CreateEmailSendHistorieTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('email_send_historie');
+        Schema::dropIfExists('email_send_histories');
     }
 }
