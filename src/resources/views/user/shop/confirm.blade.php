@@ -9,21 +9,21 @@
             </table>
         </div>
 
-        <div class="lg:flex lg:justify-between w-2/12 mx-auto mt-6">
-            <x-back-button class="block w-24 mx-auto lg:m-0">戻る</x-back-button>
-            <form action="/shop/store" method="POST">
-                @csrf
+        <form action="/shop/store" method="POST" class="lg:flex lg:justify-between w-2/12 mx-auto mt-6">
+            @csrf
 
-                <input type="hidden" name="user_id" value="{{ $request->user_id }}">
-                <input type="hidden" name="shop_id" value="{{ $request->shop_id }}">
-                <input type="hidden" name="reservation_date" value="{{ $request->reservation_date }}">
-                <input type="hidden" name="reservation_time" value="{{ $request->reservation_time }}">
-                <input type="hidden" name="party_size" value="{{ $request->party_size }}">
-                <input type="hidden" name="status" value="{{ $request->status }}">
+            <input type="hidden" name="user_id" value="{{ $request->user_id }}">
+            <input type="hidden" name="shop_id" value="{{ $request->shop_id }}">
+            <input type="hidden" name="reservation_date" value="{{ $request->reservation_date }}">
+            <input type="hidden" name="reservation_time" value="{{ $request->reservation_time }}">
+            <input type="hidden" name="party_size" value="{{ $request->party_size }}">
+            <input type="hidden" name="status" value="{{ $request->status }}">
 
-                <x-button onclick="event.preventDefault(); this.closest('form').submit();"
-                    class="block w-24 mx-auto my-4 lg:m-0">予約</x-button>
-            </form>
-        </div>
+            <x-back-button class="block h-10 w-24 mx-auto lg:m-0">戻る</x-back-button>
+
+            <x-button onclick="event.preventDefault(); this.closest('form').submit();"
+                class="block h-10 w-24 mx-auto my-0 lg:m-0">予約</x-button>
+        </form>
+    </div>
     </div>
 </x-app-layout>

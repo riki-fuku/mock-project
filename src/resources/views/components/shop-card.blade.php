@@ -18,9 +18,10 @@
 
                 <x-button onclick="location.href='/shop/detail/{{ $shopId }}'">詳しくみる</x-button>
 
-                <div class="inline-flex items-center pl-auto border-none rounded-md font-semibold text-3xl ">
-                    <span class="material-icons favorite-button" onclick="">favorite</span>
-                </div>
+                {{-- お気に入りボタン --}}
+                <shop-favorite :shop-favorite-flg='{{ !empty($shopFavorite) ? 'true' : 'false' }}'
+                    :shop-favorite-id='{{ !empty($shopFavorite->id) ? $shopFavorite->id : 0 }}'
+                    :shop-id='{{ $shopId }}' :user-id='{{ Auth::user()->id }}' />
             </div>
         </div>
     </a>

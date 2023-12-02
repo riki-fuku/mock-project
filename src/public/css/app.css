@@ -12660,12 +12660,6 @@ select {
 .m-10 {
   margin: 2.5rem;
 }
-.m-auto {
-  margin: auto;
-}
-.m-3 {
-  margin: 0.75rem;
-}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -12678,17 +12672,9 @@ select {
   margin-top: auto;
   margin-bottom: auto;
 }
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-.mx-3 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
+.my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 .-ml-px {
   margin-left: -1px;
@@ -12743,12 +12729,6 @@ select {
 }
 .mt-8 {
   margin-top: 2rem;
-}
-.ml-auto {
-  margin-left: auto;
-}
-.mr-10 {
-  margin-right: 2.5rem;
 }
 .block {
   display: block;
@@ -12837,9 +12817,6 @@ select {
 .w-6 {
   width: 1.5rem;
 }
-.w-6\/12 {
-  width: 50%;
-}
 .w-8 {
   width: 2rem;
 }
@@ -12854,9 +12831,6 @@ select {
 }
 .w-screen {
   width: 100vw;
-}
-.w-12 {
-  width: 3rem;
 }
 .max-w-6xl {
   max-width: 72rem;
@@ -12985,12 +12959,6 @@ select {
 .border-t {
   border-top-width: 1px;
 }
-.border-l {
-  border-left-width: 1px;
-}
-.border-l-2 {
-  border-left-width: 2px;
-}
 .border-none {
   border-style: none;
 }
@@ -13070,14 +13038,8 @@ select {
 .p-4 {
   padding: 1rem;
 }
-.p-5 {
-  padding: 1.25rem;
-}
 .p-6 {
   padding: 1.5rem;
-}
-.p-3 {
-  padding: 0.75rem;
 }
 .px-1 {
   padding-left: 0.25rem;
@@ -13617,14 +13579,14 @@ select {
     position: absolute;
   }
 
-  .md\:my-10 {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
-  }
-
   .md\:mx-2 {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+  }
+
+  .md\:my-10 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
   }
 
   .md\:ml-auto {
@@ -13643,14 +13605,6 @@ select {
     display: flex;
   }
 
-  .md\:w-4\/12 {
-    width: 33.333333%;
-  }
-
-  .md\:w-full {
-    width: 100%;
-  }
-
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -13659,8 +13613,16 @@ select {
     width: 25%;
   }
 
+  .md\:w-4\/12 {
+    width: 33.333333%;
+  }
+
   .md\:w-6\/12 {
     width: 50%;
+  }
+
+  .md\:w-full {
+    width: 100%;
   }
 
   .md\:grid-cols-2 {
@@ -13682,16 +13644,16 @@ select {
   .md\:border-t-0 {
     border-top-width: 0px;
   }
-
-  .md\:px-2 {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
 }
 @media (min-width: 1024px) {
 
   .lg\:m-0 {
     margin: 0px;
+  }
+
+  .lg\:my-0 {
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   .lg\:mb-6 {

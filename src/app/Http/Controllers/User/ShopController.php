@@ -10,12 +10,20 @@ use App\Models\Shop;
 use App\Models\ShopArea;
 use App\Models\ShopGenre;
 use App\Models\ShopReservation;
+use App\Models\ShopFavorite;
 
 class ShopController extends Controller
 {
     public function index()
     {
-        $shops = Shop::with('shop_area', 'shop_genre')->get();
+        $shops = Shop::with([
+                'shop_area',
+                'shop_genre',
+                'shop_favorite' => function ($query) {
+                    $query->where('user_id', auth()->id());
+                }
+            ])
+            ->get();
         $areas = ShopArea::all();
         $genres = ShopGenre::all();
 

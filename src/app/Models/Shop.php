@@ -27,4 +27,9 @@ class Shop extends Model
     {
         return $this->belongsTo(ShopGenre::class, 'shop_genre_id');
     }
+
+    public function shop_favorite()
+    {
+        return $this->belongsTo(ShopFavorite::class, 'id', 'shop_id');
+    }
 }

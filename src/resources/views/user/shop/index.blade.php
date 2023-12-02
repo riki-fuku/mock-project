@@ -23,12 +23,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                 @foreach ($shops as $key => $shop)
-                    <x-shop-card :shopId="$shop['id']" :shopName="$shop['name']" :shopArea="$shop['shop_area']['area_name']" :shopGenre="$shop['shop_genre']['genre_name']"></x-shop-card>
+                    <x-shop-card :shopId="$shop['id']" :shopName="$shop['name']" :shopArea="$shop['shop_area']['area_name']" :shopGenre="$shop['shop_genre']['genre_name']"
+                        :shopFavorite="$shop['shop_favorite']" />
                 @endforeach
             </ul>
         </div>
     </div>
-
-    <script src="{{ mix('/js/app.js') }}"></script>
 
 </x-app-layout>

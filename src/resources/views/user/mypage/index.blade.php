@@ -20,41 +20,11 @@
                 </div>
 
                 <div class="w-11/12 lg:w-full mx-auto lg:ml-2">
-
                     <h3 class="font-black text-2xl leading-10">お気に入り店舗</h3>
-
-                    @php
-                        $shopList = [
-                            [
-                                'id' => 1,
-                                'name' => '仙人',
-                                'area' => '東京都',
-                                'genre' => '寿司',
-                            ],
-                            [
-                                'id' => 2,
-                                'name' => '仙人',
-                                'area' => '東京都',
-                                'genre' => '寿司',
-                            ],
-                            [
-                                'id' => 3,
-                                'name' => '仙人',
-                                'area' => '東京都',
-                                'genre' => '寿司',
-                            ],
-                            [
-                                'id' => 4,
-                                'name' => '仙人',
-                                'area' => '東京都',
-                                'genre' => '寿司',
-                            ],
-                        ];
-                    @endphp
                     <ul class="grid md:grid-cols-2 gap-5">
-                        @foreach ($shopList as $key => $shop)
-                            <x-shop-card :shopId="$shop['id']" :shopName="$shop['name']" :shopArea="$shop['area']"
-                                :shopGenre="$shop['genre']"></x-shop-card>
+                        @foreach ($shopFavorites as $shopFavorite)
+                            <x-shop-card :shopId="$shopFavorite['shop']['id']" :shopName="$shopFavorite['shop']['name']" :shopArea="$shopFavorite['shop']['shop_area']['area_name']" :shopGenre="$shopFavorite['shop']['shop_genre']['genre_name']"
+                                :shopFavorite="$shopFavorite" />
                         @endforeach
                     </ul>
                 </div>

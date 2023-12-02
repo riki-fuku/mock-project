@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Shop;
 use App\Models\ShopReservation;
+use App\Models\ShopFavorite;
 
 class MyPageController extends Controller
 {
@@ -14,6 +15,8 @@ class MyPageController extends Controller
     {
         $shopReservations = ShopReservation::with('shop')->where(['user_id' => auth()->id(), 'status' => ShopReservation::RESERVATION_COMPLETE_STATUS])->get();
 
-        return view('user.mypage.index', compact('shopReservations'));
+        $shopFavorites = ShopFavorite::with('shop')->where(['user_id' => auth()->id()])->orderBy('created_at', 'desc')->get();
+
+        return view('user.mypage.index', compact('shopReservations', 'shopFavorites'));
     }
 }
