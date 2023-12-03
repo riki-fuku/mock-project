@@ -25,6 +25,11 @@ Route::middleware('auth')->group( function() {
         Route::get('/detail/{id}', [ShopController::class, 'detail'])->name('shop_detail');
         Route::post('/confirm', [ShopController::class, 'confirm'])->name('shop_confirm');
         Route::post('/store', [ShopController::class, 'store'])->name('shop_store');
+        Route::post('/edit', [ShopController::class, 'edit'])->name('shop_edit');
+        Route::post('/update/confirm', [ShopController::class, 'updateConfirm'])->name('shop_update_confirm');
+        Route::patch('/update', [ShopController::class, 'update'])->name('shop_update');
+        Route::post('/destroy/confirm', [ShopController::class, 'destroyConfirm'])->name('shop_destroy_confirm');
+        Route::post('/destroy', [ShopController::class, 'destroy'])->name('shop_destroy');
     });
 
     // マイページ関連

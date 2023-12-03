@@ -1,5 +1,5 @@
 {{-- メニュー画面 --}}
-<div id="menu" class="fixed bg-gray-100 w-full hidden z-10">
+<div id="menu" class="fixed bg-gray-100 w-full hidden z-20">
     <div class="fixed">
         <button
             class="absolte m-10 h-10 w-10 bg-blue-500 border border-transparent rounded-md font-semibold text-xs text-white shadow-lg shadow-gray-400 uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150"
@@ -33,7 +33,7 @@
 
             <div class="flex m-10">
                 <button
-                    class="absolte h-10 w-10 bg-blue-500 border border-transparent rounded-md font-semibold text-xs text-white shadow-lg shadow-gray-400 uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150"
+                    class="z-10 absolte h-10 w-10 bg-blue-500 border border-transparent rounded-md font-semibold text-xs text-white shadow-lg shadow-gray-400 uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150"
                     href="#" onclick="openMenu();">
                     <span class="material-symbols-outlined leading-10">menu</span>
                 </button>
@@ -136,3 +136,4 @@
         menuBlock.classList.add('hidden');
     }
 </script>
+

@@ -13,9 +13,9 @@
                 <div class="w-11/12 lg:w-10/12 mx-auto lg:mr-14">
                     <h3 class="ml-2 font-black text-2xl leading-10">予約状況</h3>
 
-                    @foreach ($shopReservations as $shopReservation)
-                        <x-reservation-card :shopName="$shopReservation['shop']['name']" :reservationDate="$shopReservation['reservation_date']" :reservationTime="$shopReservation['reservation_time']"
-                            :partySize="$shopReservation['party_size']"></x-reservation-card>
+                    @foreach ($shopReservations as $key => $shopReservation)
+                        <x-reservation-card :reservationNumber="$key + 1" :reservationId="$shopReservation['id']" :shopName="$shopReservation['shop']['name']" :reservationDate="$shopReservation['reservation_date']"
+                            :reservationTime="$shopReservation['reservation_time']" :partySize="$shopReservation['party_size']"></x-reservation-card>
                     @endforeach
                 </div>
 
@@ -23,8 +23,8 @@
                     <h3 class="font-black text-2xl leading-10">お気に入り店舗</h3>
                     <ul class="grid md:grid-cols-2 gap-5">
                         @foreach ($shopFavorites as $shopFavorite)
-                            <x-shop-card :shopId="$shopFavorite['shop']['id']" :shopName="$shopFavorite['shop']['name']" :shopArea="$shopFavorite['shop']['shop_area']['area_name']" :shopGenre="$shopFavorite['shop']['shop_genre']['genre_name']"
-                                :shopFavorite="$shopFavorite" />
+                            <x-shop-card :shopId="$shopFavorite['shop']['id']" :shopId="$shopFavorite['shop']['id']" :shopName="$shopFavorite['shop']['name']" :shopArea="$shopFavorite['shop']['shop_area']['area_name']"
+                                :shopGenre="$shopFavorite['shop']['shop_genre']['genre_name']" :shopFavorite="$shopFavorite" />
                         @endforeach
                     </ul>
                 </div>

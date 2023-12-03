@@ -13,7 +13,7 @@ class MyPageController extends Controller
 {
     public function index()
     {
-        $shopReservations = ShopReservation::with('shop')->where(['user_id' => auth()->id(), 'status' => ShopReservation::RESERVATION_COMPLETE_STATUS])->get();
+        $shopReservations = ShopReservation::with('shop')->where(['user_id' => auth()->id(), 'status' => ShopReservation::RESERVATION_COMPLETE_STATUS])->orderBy('reservation_date', 'asc')->get();
 
         $shopFavorites = ShopFavorite::with('shop')->where(['user_id' => auth()->id()])->orderBy('created_at', 'desc')->get();
 
