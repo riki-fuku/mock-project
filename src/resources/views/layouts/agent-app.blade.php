@@ -23,12 +23,17 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
-<body>
-    <div class="font-sans text-gray-900 antialiased">
+<body class="font-sans antialiased">
+    <div class="min-h-screen bg-gray-100">
 
-        @include('layouts.guest-navigation')
+        @include('layouts.agent-navigation')
 
-        {{ $slot }}
+        <!-- Page Content -->
+        <main>
+            <div id="app">
+                {{ $slot }}
+            </div>
+        </main>
     </div>
 </body>
 

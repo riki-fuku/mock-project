@@ -16,7 +16,7 @@ use App\Http\Controllers\User\MyPageController;
 |
 */
 
-Route::middleware('auth')->group( function() {
+Route::middleware('auth')->group(function () {
 
     // 店舗関連
     Route::get('/', [ShopController::class, 'index'])->name('shop');
@@ -35,8 +35,10 @@ Route::middleware('auth')->group( function() {
     // マイページ関連
     Route::group(['prefix' => 'mypage'], function () {
         Route::get('/', [MyPageController::class, 'index'])->name('mypage');
+        Route::post('/reservation_qr', [MyPageController::class, 'reservationQr'])->name('reservation_qr');
     });
-
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+require __DIR__ . '/authAgent.php';
+require __DIR__ . '/agent.php';

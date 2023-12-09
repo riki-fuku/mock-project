@@ -20,7 +20,7 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+        return view('auth.agent.register');
     }
 
     /**
@@ -47,6 +47,6 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        return view('auth.thanks', ['email' => $request->email, 'password' => $request->password]);
+        return view('auth.agent.thanks', ['email' => $request->email, 'password' => $request->password]);
     }
 }

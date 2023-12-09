@@ -7,7 +7,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class RedirectIfAuthenticated
+class RedirectIfAgentAuthenticated
 {
     private const GUARD_USER = 'users';
     private const GUARD_ADMIN = 'admins';

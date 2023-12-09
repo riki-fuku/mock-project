@@ -33,4 +33,10 @@
             <td>{{ $partySize }}人</td>
         </tr>
     </table>
+
+    <form action="{{ route('reservation_qr') }}" method="POST">
+        @csrf
+        <input type="hidden" name="id" value="{{ $reservationId }}">
+        <x-button-edit class="block mx-auto">QR表示</x-button-edit>
+    </form>
 </div>
